@@ -7,6 +7,8 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.SourceDataLine;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class KoreanSpeaker {
 
@@ -15,7 +17,7 @@ public class KoreanSpeaker {
     private static String deviceLanguage = "ko-KR";
     private static String genderName = "Female";
     private static String voiceName = "Microsoft Server Speech Text to Speech Voice (ko-KR, HeamiRUS)";
-    private static String AUDIO_DIRECTORY = "/Users/wuzejun/workspace/opensource/wordRecite/korean/audio";
+    private static String AUDIO_DIRECTORY = "/korean/audio";
     
     
      private static void saveAudio(String word) throws Exception {
@@ -28,10 +30,15 @@ public class KoreanSpeaker {
          fstream.write(audioBuffer);
          fstream.flush();
          fstream.close();
+         Files.copy(outputAudio.toPath(), (new File(getAudioSourceFileUrl(word))).toPath());
      }
 
     private static String getAudioFileUrl(String word) {
-        return AUDIO_DIRECTORY + "/" + word + ".pcm";
+        return KoreanSpeaker.class.getResource("/").getPath() + "../classes" + AUDIO_DIRECTORY + "/" + word + ".pcm";
+    }
+
+    private static String getAudioSourceFileUrl(String word) {
+        return KoreanSpeaker.class.getResource("/").getPath() + "../../src/main/resources" + AUDIO_DIRECTORY + "/" + word + ".pcm";
     }
 
     private static boolean hasAudioAlready(String word) {

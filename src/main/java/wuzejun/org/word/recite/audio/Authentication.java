@@ -31,17 +31,13 @@ package wuzejun.org.word.recite.audio;//
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
+import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
-import java.net.URLEncoder;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.net.ssl.HttpsURLConnection;
 
 /*
  * This class demonstrates how to get a valid O-auth token from
@@ -60,8 +56,10 @@ public class Authentication
     private final String charsetName = "utf-8";
     private TimerTask nineMinitesTask = null;
 
-    public Authentication(String apiKey)
+    public Authentication()
     {
+        String apiKey = System.getenv("MICROSOFT_TTS_API_KEY");
+        System.out.println("apiKey:" + apiKey);
         this.apiKey = apiKey;
 
         this.accessToken = HttpPost(AccessTokenUri, this.apiKey);

@@ -190,7 +190,7 @@ public class Application {
             System.out.println("hit rate:" + fnum.format((float) 100 * hit/count) + "%");
         }
 
-        System.out.println("finished");
+        System.out.println("finished:" + hit + "/" + count);
 
 
 

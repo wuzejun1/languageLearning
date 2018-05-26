@@ -41,7 +41,7 @@ public class TTSService {
 
     private static String ttsServiceUri = "https://westus.tts.speech.microsoft.com/cognitiveservices/v1";
 
-    private static Authentication auth = new Authentication("c14534e6a7b04e7d90d48c55725b2af6");
+    private static Authentication auth = new Authentication();
 
     /**
      * Synthesize the voice through the specified parameters.

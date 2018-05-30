@@ -1,5 +1,6 @@
 package wuzejun.org.word.recite.word;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReciteWord {
@@ -8,7 +9,16 @@ public class ReciteWord {
 
     private String translationEnglish;
 
-    private List<String> sentenceExample;
+    private List<String> sentenceExamples;
+
+    public ReciteWord(String word, String translationEnglish, String... sentenceExamples) {
+        this.word = word;
+        this.translationEnglish = translationEnglish;
+        this.sentenceExamples = new ArrayList<>();
+        for (String sentence : sentenceExamples) {
+            this.sentenceExamples.add(sentence);
+        }
+    }
 
     public String getWord() {
         return word;
@@ -26,11 +36,11 @@ public class ReciteWord {
         this.translationEnglish = translationEnglish;
     }
 
-    public List<String> getSentenceExample() {
-        return sentenceExample;
+    public List<String> getSentenceExamples() {
+        return sentenceExamples;
     }
 
-    public void setSentenceExample(List<String> sentenceExample) {
-        this.sentenceExample = sentenceExample;
+    public void setSentenceExamples(List<String> sentenceExamples) {
+        this.sentenceExamples = sentenceExamples;
     }
 }

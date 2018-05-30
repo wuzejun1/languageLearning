@@ -5,7 +5,6 @@ import wuzejun.org.word.recite.audio.KoreanSpeaker;
 import wuzejun.org.word.recite.word.ReciteWord;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -63,8 +62,8 @@ public class Application {
                 public void run() {
                     try {
                         KoreanSpeaker.speak(word.getWord());
-                        if (word.getSentenceExample() != null) {
-                          for (String sentence : word.getSentenceExample()) {
+                        if (word.getSentenceExamples() != null) {
+                          for (String sentence : word.getSentenceExamples()) {
                               KoreanSpeaker.speak(sentence);
                           }
                         }

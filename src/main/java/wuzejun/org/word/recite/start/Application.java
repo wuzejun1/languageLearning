@@ -47,6 +47,36 @@ public class Application {
         System.out.println("finished:" + hit + "/" + count);
     }
 
+    public static void speak(final List<ReciteWord> words) {
+        for (int i =0 ; i < words.size(); i++) {
+            System.out.println((i + 1) + ":" + words.get(i));
+        }
+
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            String line = sc.nextLine().trim().replace(" ","");
+            final int index = Integer.valueOf(line);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        ReciteWord word = words.get(index -1);
+                        KoreanSpeaker.speak(word.getWord());
+                        if (word.getSentenceExamples() != null) {
+                            for (String sentence : word.getSentenceExamples()) {
+                                KoreanSpeaker.speak(sentence);
+                            }
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+
+        }
+    }
+
     public static void recite(List<ReciteWord> words) {
         Random random = new Random();
         DecimalFormat   fnum  =   new DecimalFormat("##0.00");

@@ -43,4 +43,9 @@ public class ReciteWord {
     public void setSentenceExamples(List<String> sentenceExamples) {
         this.sentenceExamples = sentenceExamples;
     }
+
+    @Override
+    public String toString() {
+        return "[word=" + word + ",translationEnglish=" + translationEnglish + ",sentenceExamples=" + sentenceExamples + "]";
+    }
 }

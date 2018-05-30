@@ -59,7 +59,7 @@ public class Authentication
     public Authentication()
     {
         String apiKey = System.getenv("MICROSOFT_TTS_API_KEY");
-        System.out.println("apiKey:" + apiKey);
+        //System.out.println("apiKey:" + apiKey);
         this.apiKey = apiKey;
 
         this.accessToken = HttpPost(AccessTokenUri, this.apiKey);

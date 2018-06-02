@@ -104,7 +104,7 @@ public class Application {
                 }
             }).start();
             String answer = sc.nextLine().trim().replace(" ","");
-            if (answer.equalsIgnoreCase(word.getWord())) {
+            if (answer.equalsIgnoreCase(word.getWord().trim().replace(" ",""))) {
                 hit++;
                 System.out.println("right!!!");
             } else {

@@ -9,19 +9,37 @@ import java.util.List;
 public class Homework20180621 {
     public static void main(String[] args) {
         List<ReciteWord> reciteWordList = new ArrayList<>();
-        reciteWordList.add(new ReciteWord("몇", "a few", "지금은 몇 시입니까?"));
-        reciteWordList.add(new ReciteWord("아침", "morning", "아침에 운동을 합니다."));
-        reciteWordList.add(new ReciteWord("점심", "afternoon", "점심에 식당에서 밥을 먹습니다."));
-        reciteWordList.add(new ReciteWord("저녁", "Evening", "저녁에 집에 갑니다."));
-        reciteWordList.add(new ReciteWord("밤", "night", "저는 밤 12시에 잡니다."));
-        reciteWordList.add(new ReciteWord("일어나다", "get up", "저는 아침에 일찍 일어납니다."));
-        reciteWordList.add(new ReciteWord("자다", "sleep", "저는 밤에 늦게 잡니다."));
-        reciteWordList.add(new ReciteWord("돌아오다", "come back", "언제 집에 돌아옵니까?"));
-        reciteWordList.add(new ReciteWord("보통", "general", "보통 아침에 빵을 먹습니다."));
-        reciteWordList.add(new ReciteWord("쯤", "around (when)", "1시쯤 만납니다."));
+        // hour
+        reciteWordList.add(new ReciteWord("한시", "1 hour"));
+        reciteWordList.add(new ReciteWord("두시", "2 hour"));
+        reciteWordList.add(new ReciteWord("세시", "3 hour"));
+        reciteWordList.add(new ReciteWord("네시", "4 hour"));
+        reciteWordList.add(new ReciteWord("다섯시", "5 hour"));
+        reciteWordList.add(new ReciteWord("여섯시", "6 hour"));
+        reciteWordList.add(new ReciteWord("일곱시", "7 hour"));
+        reciteWordList.add(new ReciteWord("여덟시", "8 hour"));
+        reciteWordList.add(new ReciteWord("아홉시", "9 hour"));
+        reciteWordList.add(new ReciteWord("열시", "10 hour"));
+        reciteWordList.add(new ReciteWord("열한시", "11 hour"));
+        reciteWordList.add(new ReciteWord("열두시", "12 hour"));
+        Application.recite(reciteWordList);
 
-
-        Application.speak(reciteWordList);
+        // minute
+        //reciteWordList.clear();
+        //reciteWordList.add(new ReciteWord("일분", "1 minute"));
+        //reciteWordList.add(new ReciteWord("이분", "2 minute"));
+        //reciteWordList.add(new ReciteWord("삼분", "3 minute"));
+        //reciteWordList.add(new ReciteWord("사분", "4 minute"));
+        //reciteWordList.add(new ReciteWord("오분", "5 minute"));
+        //reciteWordList.add(new ReciteWord("육분", "6 minute"));
+        //reciteWordList.add(new ReciteWord("칠분", "7 minute"));
+        //reciteWordList.add(new ReciteWord("팔분", "8 minute"));
+        //reciteWordList.add(new ReciteWord("구분", "9 minute"));
+        //reciteWordList.add(new ReciteWord("십분", "10 minute"));
+        //reciteWordList.add(new ReciteWord("이십분", "20 minute"));
+        //reciteWordList.add(new ReciteWord("삼십분", "30 minute"));
+        //reciteWordList.add(new ReciteWord("사십분", "40 minute"));
+        //reciteWordList.add(new ReciteWord("오십분", "50 minute"));
         //Application.recite(reciteWordList);
     }
 
